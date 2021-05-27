@@ -13,13 +13,17 @@ const store = createStore(reducers, compose(applyMiddleware(thunk)));
 function MyApp({ Component, pageProps }) {
 
   return (
-    
-  <Provider session={pageProps.session}>
-      <ReduxProvider store={store}>
-          <Component {...pageProps} />
-      </ReduxProvider> 
-  </Provider>
 
+      <Provider session={pageProps.session}>
+         
+          <ReduxProvider store={store}>
+       
+              <Component {...pageProps} />
+
+          </ReduxProvider> 
+        
+      </Provider>
+  
   )
 }
 

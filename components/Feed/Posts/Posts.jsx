@@ -1,5 +1,5 @@
 
-import { useSelector ,useDispatch} from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Post from './post/Post';
 
@@ -8,7 +8,7 @@ function Posts({session}) {
 
     const posts = useSelector((state) => state.posts);
   
-  
+    
  
     return (
         <div >

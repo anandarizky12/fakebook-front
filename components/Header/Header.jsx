@@ -12,6 +12,7 @@ function Header({session}) {
     const closeDropdown = () => {
         setdropdown(false);
     }
+  
     const ref = useDetectClickOutside({ onTriggered: closeDropdown });
   
  
@@ -28,9 +29,10 @@ function Header({session}) {
             </div>
             <div className="flex justify-center flex-grow w-1/3">
                 <div className="flex space-x-6 md:space-x-2">
-                    <HeaderIcons Icon={HomeIcon}/>
+                    <HeaderIcons  url={"/"} Icon={HomeIcon}/>
                     <HeaderIcons Icon={FlagIcon}/>
-                    <HeaderIcons Icon={PlayIcon}/>  
+               
+                    <HeaderIcons url={"/profile"} Icon={PlayIcon}/> 
                     <HeaderIcons Icon={ShoppingCartIcon}/>
                     <HeaderIcons Icon={UserGroupIcon}/>
                 </div>

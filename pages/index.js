@@ -4,18 +4,19 @@ import {getSession} from 'next-auth/client';
 import Login from '../components/Login/Login';
 import Sidebar from '../components/Sidebar/Sidebar';
 import Feed from '../components/Feed/Feed';
-
-import { useDispatch , useSelector  } from 'react-redux';
+import Link from 'next/link'
+import { useSelector ,useDispatch} from 'react-redux';
 import { getPosts } from '../actions/index';
   
 import React, { useState, useEffect } from 'react';
+
 
 
 export default function Home({session}) {
 
   
 
-  const posts = useSelector((state) => state.posts);
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -35,15 +36,21 @@ export default function Home({session}) {
    )
   }
   return (
+  
     <div className="max-h-screen  overflow-hidden"> 
       <Head>
         <title>FakeBook</title>
       </Head>
-      <Header session={session}/>
-      <main className="flex">
-        <Sidebar/>
-        <Feed session={session}/>
-      </main>
+        <Header session={session}/>
+       
+                <main className="flex">
+                      <Sidebar/>
+                      <Feed session={session}/>
+                </main>
+         
+               
+
+      
     </div>
   )
 }
