@@ -7,6 +7,7 @@ from "@heroicons/react/outline";
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
 import {deletePost } from '../../../../actions/index';
+import moment from 'moment';
 
 function Post({post,session}) {
     const dispatch = useDispatch();
@@ -16,6 +17,7 @@ function Post({post,session}) {
         setoption(false)
         dispatch(deletePost(post._id))
     }
+    const m=moment()
     console.log(session.user.email)
     return (
         <div key={post._id} className="p-10 flex flex-col justify-center rounded-2xl bg-gray-200 mt-5 shadow-md ">
@@ -31,7 +33,7 @@ function Post({post,session}) {
                             </div>
                             <div className="">
                                 <p className="font-bold">{post.username}</p>
-                                <p className="text-xs text-gray-400">{post.timestamp}</p>
+                                <p className="text-xs text-gray-400">{post.timestamp.slice(0,10)}</p>
                             </div>
                         
                         </div>
