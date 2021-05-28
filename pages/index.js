@@ -26,21 +26,13 @@ export default function Home({session}) {
   if(!session){
    return (
     <div>
-    <Head>
-      <title>FakeBook</title>
-    </Head>
-  <Login/>
-
-  
+        <Login/>
     </div>
    )
   }
   return (
   
     <div className="max-h-screen  overflow-hidden"> 
-      <Head>
-        <title>FakeBook</title>
-      </Head>
         <Header session={session}/>
        
                 <main className="flex">
@@ -48,9 +40,6 @@ export default function Home({session}) {
                       <Feed session={session}/>
                 </main>
          
-               
-
-      
     </div>
   )
 }
