@@ -1,12 +1,16 @@
 import React from 'react'
 import {
     UsersIcon,
-    DotsVerticalIcon
+    DotsVerticalIcon,
 }
 from "@heroicons/react/outline";
+import {
+    ThumbUpIcon
+}
+from "@heroicons/react/solid";
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
-import {deletePost } from '../../../../actions/index';
+import {deletePost,likePost } from '../../../../actions/index';
 import moment from 'moment';
 
 function Post({post,session}) {
@@ -67,8 +71,11 @@ function Post({post,session}) {
                     <img className="h-60" src={post.image} alt="" />
                     }
                 </div>
-                <div className="w-full py-2">
-                    <input className="w-full p-1" placeholder="Comment " />
+                <div className="w-full p-3 flex">
+                    <ThumbUpIcon onClick={() => dispatch(likePost(post._id))} className="h-6 cursor-pointer text-yellow-500"/>
+                  <p className="px-2 font-bold text-yellow-500">{post.likeCount} likes</p>  
+                 
+                  
                 </div>
              
             </div>
