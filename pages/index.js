@@ -18,9 +18,10 @@ export default function Home({session}) {
 
   
   const dispatch = useDispatch();
-
+ 
   useEffect(() => {
     dispatch(getPosts());
+   
   }, [dispatch]);
 
   if(!session){

@@ -67,6 +67,9 @@ function Post({post,session}) {
                     <img className="h-60" src={post.image} alt="" />
                     }
                 </div>
+                <div className="w-full py-2">
+                    <input className="w-full p-1" placeholder="Comment " />
+                </div>
              
             </div>
     )

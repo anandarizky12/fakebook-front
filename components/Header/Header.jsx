@@ -1,4 +1,4 @@
-import links from '../../Links.js'
+
 import {useState} from 'react'
 import { BeakerIcon,SearchIcon ,HomeIcon,FlagIcon,PlayIcon,ShoppingCartIcon,UserGroupIcon,ViewGridIcon,ChatIcon,
 BellIcon,ChevronDownIcon} from '@heroicons/react/solid'
@@ -32,7 +32,7 @@ function Header({session}) {
                     <HeaderIcons  url={"/"} Icon={HomeIcon}/>
                     <HeaderIcons Icon={FlagIcon}/>
                
-                    <HeaderIcons url={"/profile"} Icon={PlayIcon}/> 
+                    <HeaderIcons  url={"/profile"} Icon={PlayIcon}/> 
                     <HeaderIcons Icon={ShoppingCartIcon}/>
                     <HeaderIcons Icon={UserGroupIcon}/>
                 </div>
