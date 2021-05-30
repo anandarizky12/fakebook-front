@@ -91,14 +91,14 @@ function Inputbox({session}) {
     },[status])
     console.log(postData)
     return (
-    <div className="bg-white p-2 rounded-2xl  shadow-md text-gray-500 font-medium mt-6 ">
-        <div className="relative flex space-x-4 x-4 p-3 items-center">
-            <img className="rounded-full w-16 h-16" src={session.user.image} alt="" />
-            <form onSubmit={(e)=>sendPost(e)}  className="flex flex-1 relative items-center" >
-                <input value={postData.caption} onChange={(e)=>setpostData({...postData , caption: e.target.value.trimStart()})} className="rounded-full pr-12 h-12 bg-gray-200 flex-grow px-5 focus:outline-none" type="text" placeholder={`What's on your mind, ${session.user.name} ?`} />
+    <div className="bg-white py-1 md:p-2 rounded-2xl  shadow-md text-gray-500 font-medium mt-6 ">
+        <div className="relative  flex md:space-x-4 x-4 md:p-3 items-center ">
+            <img className="rounded-full hidden md:inline md:w-16 md:h-16" src={session.user.image} alt="" />
+            <form onSubmit={(e)=>sendPost(e)}  className="flex flex-1 relative items-center " >
+                <input value={postData.caption} onChange={(e)=>setpostData({...postData , caption: e.target.value.trimStart()})} className="rounded-full pr-12 h-10 md:h-12 bg-gray-200 flex-grow px-5 focus:outline-none" type="text" placeholder={`What's on your mind, ${session.user.name} ?`} />
                 
                 <div ref={ref} >
-                    <EmojiHappyIcon onClick={()=>setEmojiBox(!EmojiBox)} className="h-7 top-3 text-yellow-500 absolute right-4 cursor-pointer hover:text-yellow-600"/>
+                    <EmojiHappyIcon onClick={()=>setEmojiBox(!EmojiBox)} className="h-7 top-2 md:top-3 text-yellow-500 absolute right-4 cursor-pointer hover:text-yellow-600"/>
                     <div  className={`${EmojiBox ? 'block' : 'hidden'} absolute  top-14 w-2/4 right-0 bg-gray-300 p-3 flex flex-wrap items-center justify-center overflow-y-auto h-20`}> 
                         {Emoji.map((a,index)=>(
                             <div key={index} onClick={(e)=>onEmojiClick(e)} className="flex justify-center rounded-full cursor-pointer py-1 px-1 hover:bg-gray-400">
