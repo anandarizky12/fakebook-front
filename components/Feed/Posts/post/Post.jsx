@@ -65,10 +65,10 @@ function Post({post,session}) {
                     </div>
                   
           
-                <p className="mx-11 py-5">{post.caption}</p>
+                <p className="mx-1 py-5">{post.caption}</p>
                 <div className="flex justify-center bg-black">
                     {post.image && 
-                    <img className="md:h-60 h-30" src={post.image} alt="" />
+                    <img className="md:h-auto h-30" src={post.image} alt="" />
                     }
                 </div>
                 <div className="w-full p-3 text-xs md:text-base flex">

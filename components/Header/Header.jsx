@@ -18,34 +18,35 @@ function Header({session}) {
  
     return (
         <div  className="sticky top-0 z-10 flex items-center py-2 md:py-0 px-5 md:px-2 lg:px-5 shadow-md bg-gray-100" >
-            <div className="flex items-center w-1/3 ">
+            <div className="flex items-center w-auto md:w-1/3">
                 <img className="w-7" src="/f.png" alt="" />
-                <div className="search flex items-center">
+                <div className=" flex items-center ">
                     <SearchIcon className="h-5 pl-1 absolute gray text-yellow-500"/>
-                    <input className="hidden md:inline-flex p-1 border w-44 rounded-2xl outline-none pl-7 flex-shrink bg-transparent" type="text" placeholder="Search Fakebook" />
+                    <input className="inline-flex p-1 border w-44 rounded-2xl outline-none pl-7 flex-shrink bg-transparent" type="text" placeholder="Search Fakebook" />
                 </div>
-             
-
             </div>
             <div className="flex justify-center flex-grow w-1/3">
-                <div className="flex space-x-6 md:space-x-2">
-                    <HeaderIcons  url={"/"} Icon={HomeIcon}/>
-                    <HeaderIcons Icon={FlagIcon}/>
+                <div className="flex items-center space-x-6 md:space-x-2">
+                    <div className="flex flex-col justify-center items-center  h-7">
+                            <HeaderIcons  url={"/"} Icon={HomeIcon}/>
+                            <p className="hidden md:inline text-xs text-gray-400">Home</p>
+                    </div>
+                  
+                
                
-                    <HeaderIcons  url={"/profile"} Icon={PlayIcon}/> 
-                    <HeaderIcons Icon={ShoppingCartIcon}/>
-                    <HeaderIcons Icon={UserGroupIcon}/>
+                    {/* <HeaderIcons  url={"/profile"} Icon={PlayIcon}/>  */}
+   
                 </div>
             </div>
             <div className="flex items-center sm:space-x-2 justify-end w-1/3">
-                <img className="rounded-full hidden md:inline w-5 m-1 md:w-10" src={session.user.image} width={40} height={40} layout="fixed" />
+                <img className="rounded-full  md:inline w-8 m-1 md:w-10" src={session.user.image} width={40} height={40} layout="fixed" />
                 <p className="font-semibold hidden md:inline whitespace-nowrap pr-3" >{session.user.name.split(' ')[0]}</p>
                 <ViewGridIcon  className="icon"/>
                 <ChatIcon className="icon"/>
                 <BellIcon className="icon"/>
                 <div className="" ref={ref}>
                         <ChevronDownIcon className="inline-flex p-2 h-8 w-8 bg-gray-200 rounded-full text-gray-700 cursor-pointer hover:bg-gray-300" onClick={()=>setdropdown(!dropdown)}  />
-                            <div className={`${dropdown ? 'fixed' : 'hidden'}  right-5 shadow-md w-52 md:w-72 rounded-md bg-gray-200  h-auto p-1 md:p-3 top-12 md:top-10 sm:top-14` } >
+                            <div className={`${dropdown ? 'fixed' : 'hidden'}  right-5 shadow-md w-52 md:w-72 rounded-md bg-gray-200  h-auto p-1 md:p-3 top-12 md:top-13 sm:top-14` } >
                                 <div className="">
                                     <div className="flex flex-row items-center">
                                         <div className="">

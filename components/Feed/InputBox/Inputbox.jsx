@@ -1,5 +1,5 @@
 import {EmojiHappyIcon} from "@heroicons/react/outline"
-import {CameraIcon,TrashIcon} from "@heroicons/react/solid"
+import {CameraIcon,TrashIcon,PlusCircleIcon} from "@heroicons/react/solid"
 import React, { useState ,useEffect,useRef} from 'react';
 import { useDetectClickOutside } from 'react-detect-click-outside';
 import Emoji from './Emoji';
@@ -61,12 +61,15 @@ function Inputbox({session}) {
     }
 
     const removeImage=()=>{
-            setimagePost(null)
+            setimagePost()
     }
     /////////////////tu push the image to the postData array
     useEffect(()=>{
         if(imagePost){
             setpostData({...postData,image:imagePost})
+        }
+        else{
+            setpostData({...postData,image:''})
         }
     },[imagePost])
     ///////to show if that is works
@@ -118,7 +121,7 @@ function Inputbox({session}) {
         </div>
         {/* to render the image that user want to post */}
         {imagePost && (
-            <div className="flex justify-center pb-3">
+            <div className="flex justify-center py-1 pb-3">
                 <div className="flex flex-col  rounded-md bg-gray-300 p-2">
                     <img src={imagePost} className="h-40 object-contain rounded"/>
                     <TrashIcon onClick={removeImage} className="h-7 hover:bg-red-700 mt-1 rounded cursor-pointer  p-1 bg-red-500 text-gray-300"/>
@@ -126,7 +129,15 @@ function Inputbox({session}) {
                 </div>
             </div>
         )}
-    </div>
+
+        {postData.caption||postData.image ?   
+        <div className="w-full flex flex-col items-center p-1 justify-center">
+            <PlusCircleIcon onClick={(e)=>sendPost(e)} className="h-8 cursor-pointer sm:h-14 bottom-1 right-0 text-yellow-600"/>
+         
+        </div>
+        : null
+        }
+    </div> 
     )
 }
 
