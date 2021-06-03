@@ -18,9 +18,7 @@ function Profile({session}) {
     useEffect(() => {
         dispatch(getPosts());
     }, [dispatch]);
-    useEffect(() => {
-      console.log(window.location.href)
-    }, [window.location]);
+
   
 
     return (
